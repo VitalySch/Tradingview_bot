@@ -1,5 +1,3 @@
-# import numpy as np
-# import pandas as pd
 
 
 send_list = {'OZON': None,
@@ -56,24 +54,24 @@ send_list = {'OZON': None,
             'NFLX': None,
             'GOOGL': None,
             'NVDA': None,
-  'FORD': None,
-  'HSCS': None,
-  'INTC': None,
-  'SOFI': None,
-  'SOUN': None,
-  'COIN': None,
-  'AI': None,
-  'PLTR': None,
-  'CVNA': None,
-  'AMC': None,
-  'SNAP': None,
+            'FORD': None,
+            'HSCS': None,
+            'INTC': None,
+            'SOFI': None,
+            'SOUN': None,
+            'COIN': None,
+            'AI': None,
+            'PLTR': None,
+            'CVNA': None,
+            'AMC': None,
+            'SNAP': None,
             }
 
 
 
 
 
-def cheking(tool, advice):
+def checking(tool, advice):
   '''
   Функция проверяет есть данные в списке. Неодходима для того, чтобы не спамить одним и тем же результатом
   '''

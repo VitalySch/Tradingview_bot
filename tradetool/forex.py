@@ -1,3 +1,9 @@
+from tradetool import TradeTool
+from functions import checking
+import time
+from create_bot import send_msg
+
+
 forex_list = {
     'EURUSD': ["forex", "FX_IDC"],
     'GBPUSD': ["forex", "FX_IDC"],
@@ -11,10 +17,25 @@ forex_list = {
     'GBPJPY': ["forex", "FX_IDC"],
     'EURCAD': ["forex", "FX_IDC"],
     'EURAUD': ["forex", "FX_IDC"],
-    # 'AUDJPY': ["forex", "FX_IDC"],
-    # 'GBPAUD': ["forex", "FX_IDC"],
-    # 'GBPCAD': ["forex", "FX_IDC"],
-    # 'GBPCHF': ["forex", "FX_IDC"],
-    # 'NZDJPY': ["forex", "FX_IDC"]
+    'AUDJPY': ["forex", "FX_IDC"],
+    'GBPAUD': ["forex", "FX_IDC"],
+    'GBPCAD': ["forex", "FX_IDC"],
+    'GBPCHF': ["forex", "FX_IDC"],
+    'NZDJPY': ["forex", "FX_IDC"],
     
 }
+
+
+def Forex_trade():
+  for stock, market in forex_list.items():
+      try:
+        trade = TradeTool(stock, market[0], market[1])
+        
+        if trade.monitoring():
+          if checking(stock, trade.result):
+            text = f'{stock}, {trade.price}, {trade.result}'
+            print(text)            
+            send_msg(text)
+      except:
+        print(stock, "Данные не получены")
+      time.sleep(0.5)
