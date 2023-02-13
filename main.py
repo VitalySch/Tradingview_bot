@@ -9,7 +9,7 @@ def main():
     
     Moex_trade()
     Forex_trade()
-    HongKong_trade()
+    # HongKong_trade()
     
     
      
